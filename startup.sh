@@ -18,10 +18,14 @@ sleep 15
 
 # 4. Pull and warm up model
 ollama run gemma4:e2b "hi" > /dev/null 2>&1 & 
-
+echo "==================================="
+ollama list
+echo "==================================="
 # 5. Start Tunnel Agent
 export VPS_IP='187.127.164.190'
 nohup node /workspace/tunnel/agent.js > /var/log/tunnel-agent.log 2>&1 &
+sleep 1
+cat /var/log/tunnel-agent.log
 
 echo "Everything started. Container ready."
 tail -f /dev/null
