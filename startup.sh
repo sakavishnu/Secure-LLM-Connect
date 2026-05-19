@@ -17,7 +17,9 @@ echo "Waiting for Ollama to initialize..."
 sleep 15
 
 # 4. Pull and warm up model
-ollama run gemma4:e2b "hi" > /dev/null 2>&1 & 
+#ollama run gemma4:e4b "hi" > /dev/null 2>&1 & 
+ollama run gemma4:e4b "hi"
+
 echo "==================================="
 ollama list
 echo "==================================="
